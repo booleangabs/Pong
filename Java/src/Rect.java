@@ -3,9 +3,9 @@ import java.awt.*;
 public class Rect {
     public int x;
     public int y;
+    public int dy;
     public final int width = Utils.PAD_WIDTH;
     public final int height = Utils.PAD_HEIGHT;
-    public final int dy;
     public GameWindow window;
     public Graphics2D g2d;
 

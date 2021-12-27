@@ -6,6 +6,8 @@ import java.lang.Thread;
 
 public class GameWindow extends JFrame implements Runnable {
     public Graphics2D g2d;
+    public boolean firstRender = true;
+    public int playerScore = 0, computerScore = 0;
     public Player player = new Player(this, Utils.PLAYER_OFFSET,
                                            Utils.CENTER_Y - Utils.PAD_HEIGHT / 2);
     public AI computer = new AI(this, Utils.AI_OFFSET,
@@ -13,7 +15,6 @@ public class GameWindow extends JFrame implements Runnable {
     public Ball ball = new Ball(this,
                                      Utils.CENTER_X - Utils.BALL_RADIUS / 2,
                                      Utils.CENTER_Y - Utils.BALL_RADIUS / 2);
-    public InputListener inputListener = new InputListener();
 
     public GameWindow() {
         this.setSize(Utils.WINDOW_WIDTH, Utils.WINDOW_HEIGHT);
@@ -35,20 +36,20 @@ public class GameWindow extends JFrame implements Runnable {
         if (this.g2d == null) this.g2d = (Graphics2D)this.getGraphics();
         this.g2d.setColor(Color.BLACK);
         this.g2d.fillRect(0, 0, Utils.WINDOW_WIDTH, Utils.WINDOW_HEIGHT);
-
         this.g2d.setColor(Color.WHITE);
-        this.g2d.fillRect(Utils.CENTER_X - Utils.DIV_WIDTH / 2, 0,
-                       Utils.DIV_WIDTH, Utils.WINDOW_HEIGHT);
+        for (int i = 0; i < 37; i += 2) {
+            this.g2d.fillRect(Utils.CENTER_X - Utils.DIV_WIDTH / 2, i * 13,
+                    Utils.DIV_WIDTH, 13);
+        }
 
         this.player.draw();
         this.computer.draw();
         this.ball.draw();
 
-        /* For later, transparent drawing
-         * this.g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
-         * this.g2d.setColor(new Color(0, 255, 0, 50));
-         * this.g2d.fillRect(0, 0, Utils.WINDOW_WIDTH, Utils.WINDOW_HEIGHT);
-         */
+        this.g2d.setColor(Color.GREEN);
+        this.g2d.setFont(Utils.FONT);
+        this.g2d.drawString(Integer.toString(this.playerScore), Utils.PLAYER_OFFSET, 60);
+        this.g2d.drawString(Integer.toString(this.computerScore), Utils.AI_OFFSET, 60);
     }
 
     @Override
@@ -60,7 +61,6 @@ public class GameWindow extends JFrame implements Runnable {
         }
 
         System.out.println("Started the game");
-
         while (true) {
             this.update();
 
