@@ -5,13 +5,14 @@ public class Rect {
     public int y;
     public final int width = Utils.PAD_WIDTH;
     public final int height = Utils.PAD_HEIGHT;
-    public final int dy = 5;
+    public final int dy;
     public GameWindow window;
     public Graphics2D g2d;
 
-    public Rect(GameWindow window, int x, int y) {
+    public Rect(GameWindow window, int x, int y, int dy) {
         this.x = x;
         this.y = y;
+        this.dy = dy;
         this.window = window;
     }
 
@@ -26,8 +27,7 @@ public class Rect {
     public void move(boolean up) {
         if (up) this.y -= this.dy;
         else this.y += this.dy;
-        this.y = Math.max((this.height / 2) - 2 * this.dy,
-                          Math.min(this.y, this.window.getHeight() - this.height - this.dy));
+        this.y = Math.max(30, Math.min(this.y, 395));
         System.out.println(this.y);
     }
 }

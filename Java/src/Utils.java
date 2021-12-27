@@ -19,7 +19,7 @@ public class Utils {
     public static final int AI_OFFSET = WINDOW_WIDTH - OFFSET - PAD_WIDTH;
     public static final String WINDOW_TITLE = "Pong - Java";
     public static final int DIV_WIDTH = 10;
-    public static final int SLEEP = 60;
+    public static final int SLEEP = 30;
     public static final int ON_CLOSE = WindowConstants.EXIT_ON_CLOSE;
     public static final ImageIcon ICON = new ImageIcon(Objects.requireNonNull(Images.class.getResource("icon.png")));
     public static Font FONT = null;

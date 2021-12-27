@@ -43,6 +43,12 @@ public class GameWindow extends JFrame implements Runnable {
         this.player.draw();
         this.computer.draw();
         this.ball.draw();
+
+        /* For later, transparent drawing
+         * this.g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+         * this.g2d.setColor(new Color(0, 255, 0, 50));
+         * this.g2d.fillRect(0, 0, Utils.WINDOW_WIDTH, Utils.WINDOW_HEIGHT);
+         */
     }
 
     @Override
