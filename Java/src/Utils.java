@@ -22,7 +22,7 @@ public class Utils {
     public static final int SLEEP = 45;
     public static final int BALL_SPEED = 11;
     public static final int AI_SPEED = 10;
-    public static final int PLAYER_SPEED = 10;
+    public static final int PLAYER_SPEED = 15;
     public static final int ON_CLOSE = WindowConstants.EXIT_ON_CLOSE;
     public static final ImageIcon ICON = new ImageIcon(Objects.requireNonNull(Images.class.getResource("icon.png")));
     public static Font FONT = null;

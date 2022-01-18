@@ -6,7 +6,6 @@ import java.lang.Thread;
 
 public class GameWindow extends JFrame implements Runnable {
     public Graphics2D g2d;
-    public boolean firstRender = true;
     public int playerScore = 0, computerScore = 0;
     public Player player = new Player(this, Utils.PLAYER_OFFSET,
                                            Utils.CENTER_Y - Utils.PAD_HEIGHT / 2);
