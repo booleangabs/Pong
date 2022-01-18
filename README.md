@@ -3,6 +3,6 @@ Trying to code the Pong game in multiple programming languages
 
 | Programming Language |   Status  |
 |         ----         |     ---     |
-|         Java         | Minimal Version  |
-|        Python        |    To do    |
+|         Java         | Done  |
+|        Python        |    Working on it   |
 |          C++         |    To do    |
